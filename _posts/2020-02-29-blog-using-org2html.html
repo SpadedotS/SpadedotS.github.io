@@ -1,0 +1,55 @@
+<p>
+#+BEGIN
+&#x2014;
+layout: post
+title: 博客重建记录
+tagline:
+categories: computer
+tags: [emacs,blog,web,折腾]
+&#x2014;
+#+END
+</p>
+
+<div id="outline-container-org3eceb9a" class="outline-2">
+<h2 id="org3eceb9a">前言</h2>
+<div class="outline-text-2" id="text-org3eceb9a">
+<p>
+学习Emacs已经有一段时间了，为了更方便的写博客，我重新构建了我的Github Pages作为博客，并且折腾了好一出，现在可以使用Org系统生成Html直接放到静态页面上了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3061c3f" class="outline-2">
+<h2 id="org3061c3f">重构步骤</h2>
+<div class="outline-text-2" id="text-org3061c3f">
+<p>
+这次重构很大程度上参考了<a href="https://lgfang.github.io/computer/2015/11/02/org-mode-github-pages">lgfang's blog</a>这篇文章的方法，作者原文章写作于2015年，5年过去，其中的方法也有一些可以更简化。
+</p>
+</div>
+
+<div id="outline-container-org76a0b2b" class="outline-3">
+<h3 id="org76a0b2b">1. 建立Github Pages页面</h3>
+<div class="outline-text-3" id="text-org76a0b2b">
+<p>
+Github提供了相当便捷的静态页面生成方式，只要在个人仓库中新建一个名为{Username}.github.io的仓库，它就会自动运行Github Pages服务。
+同时，Github Pages支持Jekyll，而Jekyll又支持HTML输出，用Org-mode进行博文编写的思路就出来了。
+通过Org-mode将org文件生成为html文件，再将生成的HTML文件放入post里即可。
+</p>
+
+<p>
+官方给出的基于jekyll的Github Pages的生成相当繁琐，这里有个更简单的方法。
+将jekyll-bootstrap仓库fork到自己的仓库，并且按之前Github Pages仓库命名的规则命名。
+之后对其中的<sub>config.yml文件进行修改</sub>，将production<sub>url字段改为自己的Github</sub> Pages域名，即可生成基于jekyll的Github Pages。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0e04d1c" class="outline-2">
+<h2 id="org0e04d1c">待补充细节</h2>
+<div class="outline-text-2" id="text-org0e04d1c">
+</div>
+<div id="outline-container-org0d8fe61" class="outline-3">
+<h3 id="org0d8fe61">插入图片</h3>
+</div>
+</div>
