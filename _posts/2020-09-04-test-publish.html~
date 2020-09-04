@@ -1,15 +1,10 @@
-<div class="HTML">
-<p>
-&#x2014;
+---
 layout: post
 title: Test publish in emacs
 tagline:
 categories: emacs
 tags: [emacs, org-mode]
-&#x2014;
-</p>
-
-</div>
+---
 
 <div id="outline-container-org75539ff" class="outline-2">
 <h2 id="org75539ff">实验下一步创新点</h2>
