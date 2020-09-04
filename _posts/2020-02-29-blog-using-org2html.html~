@@ -39,8 +39,15 @@ Github提供了相当便捷的静态页面生成方式，只要在个人仓库�
 </p>
 </div>
 </div>
+<div id="outline-container-org3af81ee" class="outline-3">
+<h3 id="org3af81ee">2. 修改主题</h3>
+<div class="outline-text-3" id="text-org3af81ee">
+<p>
+jekyll中自带了一个默认的twitter主题，
+</p>
 </div>
-
+</div>
+</div>
 <div id="outline-container-org0e04d1c" class="outline-2">
 <h2 id="org0e04d1c">待补充细节</h2>
 <div class="outline-text-2" id="text-org0e04d1c">
