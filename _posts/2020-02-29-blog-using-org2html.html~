@@ -48,18 +48,18 @@ jekyll中自带了一个默认的twitter主题，
 </div>
 </div>
 </div>
-<div id="outline-container-org0e04d1c" class="outline-2">
-<h2 id="org0e04d1c">待补充细节</h2>
-<div class="outline-text-2" id="text-org0e04d1c">
+<div id="outline-container-org12aa981" class="outline-2">
+<h2 id="org12aa981">部分功能的实现细节</h2>
+<div class="outline-text-2" id="text-org12aa981">
 </div>
 <div id="outline-container-org0d8fe61" class="outline-3">
 <h3 id="org0d8fe61">插入图片</h3>
 <div class="outline-text-3" id="text-org0d8fe61">
-
-<div class="figure">
-<p><img src="https://raw.githubusercontent.com/SpadedotS/BlogIMG/master/006kvRjAly1g50dm9fovdj31kw11xnpd.jpg" alt="006kvRjAly1g50dm9fovdj31kw11xnpd.jpg" />
+<p>
+<img src="https://raw.githubusercontent.com/SpadedotS/BlogIMG/master/006kvRjAly1g50dm9fovdj31kw11xnpd.jpg" alt="006kvRjAly1g50dm9fovdj31kw11xnpd.jpg" />
+按照上面lgfang的做法，插入图片对于路径的处理很难，Github Pages疑似是不能处理相对路径，经过考量后，我还是决定使用图床进行图片的插入。
+图床推荐使用<a href="https://picgo.github.io/PicGo-Doc/">PicGO</a>，使用GitHub仓库作为图床的设置在<a href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html">这里</a>。除此以外PicGO还支持其他主流的图床，而且有Linux、Mac下的GUI客户端，使用也是非常方便。
 </p>
-</div>
 </div>
 </div>
 </div>
