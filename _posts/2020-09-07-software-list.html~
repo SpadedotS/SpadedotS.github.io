@@ -16,7 +16,7 @@ tags: [Software]
 <ul class="org-ul">
 <li>VScode Windows环境下第一好的代码编辑器</li>
 <li>Emacs 通用的好编辑器</li>
-<li>Python3.x 产出+学术垃圾+必需的语言</li>
+<li>Python3.x 产出 <del>学术垃圾</del> 必需的语言</li>
 <li>clangd 用作lsp后端</li>
 <li>gcc 编译器</li>
 </ul>
