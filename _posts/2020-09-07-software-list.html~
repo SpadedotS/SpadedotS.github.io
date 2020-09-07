@@ -1,0 +1,53 @@
+---
+layout: post
+title: 软件记录-新换机器需要的软件
+tagline:
+categories: computer
+tags: [Software]
+---
+
+<p>
+记录一下WindowsNT环境下必须的软件
+</p>
+
+<div id="outline-container-orgd758b96" class="outline-2">
+<h2 id="orgd758b96">编程相关</h2>
+<div class="outline-text-2" id="text-orgd758b96">
+<ul class="org-ul">
+<li>VScode Windows环境下第一好的代码编辑器</li>
+<li>Emacs 通用的好编辑器</li>
+<li>Python3.x 产出+学术垃圾+必需的语言</li>
+<li>clangd 用作lsp后端</li>
+<li>gcc 编译器</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge767352" class="outline-2">
+<h2 id="orge767352">文件管理</h2>
+<div class="outline-text-2" id="text-orge767352">
+<ul class="org-ul">
+<li>SpaceSniffer 存储不够时考虑使用（基本不会出现）</li>
+<li>Everything 强大的查找文件的软件</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgda22499" class="outline-2">
+<h2 id="orgda22499">虚拟机</h2>
+<div class="outline-text-2" id="text-orgda22499">
+<ul class="org-ul">
+<li>VMWare 成熟的虚拟机软件</li>
+<li>WSL/WSL2 微软自家的虚拟机，轻量化</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc9ba5d2" class="outline-2">
+<h2 id="orgc9ba5d2">浏览器</h2>
+<div class="outline-text-2" id="text-orgc9ba5d2">
+<ul class="org-ul">
+<li>Chrome <del>被谷歌生态绑架了</del></li>
+</ul>
+</div>
+</div>
