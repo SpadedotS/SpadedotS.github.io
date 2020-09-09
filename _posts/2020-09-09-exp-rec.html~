@@ -18,9 +18,9 @@ tags: [Research]
 <h3 id="org86481ff">h36m</h3>
 <div class="outline-text-3" id="text-org86481ff">
 </div>
-<div id="outline-container-org914ee01" class="outline-4">
-<h4 id="org914ee01">使用LSTM</h4>
-<div class="outline-text-4" id="text-org914ee01">
+<div id="outline-container-org834dc4e" class="outline-4">
+<h4 id="org834dc4e">使用LSTM</h4>
+<div class="outline-text-4" id="text-org834dc4e">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -37,11 +37,11 @@ tags: [Research]
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">BATCH<sub>SIZE</sub></th>
+<th scope="col" class="org-right">BATCH _ SIZE</th>
 <th scope="col" class="org-right">EPOCH</th>
-<th scope="col" class="org-right">LEARNING<sub>RATE</sub></th>
-<th scope="col" class="org-right">TRAIN<sub>ACC</sub></th>
-<th scope="col" class="org-right">TEST<sub>ACC</sub></th>
+<th scope="col" class="org-right">LEARNING\<sub>RATE</sub></th>
+<th scope="col" class="org-right">TRAIN\<sub>ACC</sub></th>
+<th scope="col" class="org-right">TEST\<sub>ACC</sub></th>
 </tr>
 </thead>
 <tbody>
@@ -70,9 +70,9 @@ tags: [Research]
 <h3 id="org463247a">cmu</h3>
 <div class="outline-text-3" id="text-org463247a">
 </div>
-<div id="outline-container-org1422134" class="outline-4">
-<h4 id="org1422134">使用LSTM</h4>
-<div class="outline-text-4" id="text-org1422134">
+<div id="outline-container-org8ff8e81" class="outline-4">
+<h4 id="org8ff8e81">使用LSTM</h4>
+<div class="outline-text-4" id="text-org8ff8e81">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -89,11 +89,11 @@ tags: [Research]
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">BATCH<sub>SIZE</sub></th>
+<th scope="col" class="org-right">BATCH\<sub>SIZE</sub></th>
 <th scope="col" class="org-right">EPOCH</th>
-<th scope="col" class="org-right">LEARNING<sub>RATE</sub></th>
-<th scope="col" class="org-right">TRAIN<sub>ACC</sub></th>
-<th scope="col" class="org-right">TEST<sub>ACC</sub></th>
+<th scope="col" class="org-right">LEARNING\<sub>RATE</sub></th>
+<th scope="col" class="org-right">TRAIN\<sub>ACC</sub></th>
+<th scope="col" class="org-right">TEST\<sub>ACC</sub></th>
 </tr>
 </thead>
 <tbody>
