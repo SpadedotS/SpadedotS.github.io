@@ -18,9 +18,9 @@ tags: [Research]
 <h3 id="org86481ff">h36m</h3>
 <div class="outline-text-3" id="text-org86481ff">
 </div>
-<div id="outline-container-org8ff8e81" class="outline-4">
-<h4 id="org8ff8e81">使用LSTM</h4>
-<div class="outline-text-4" id="text-org8ff8e81">
+<div id="outline-container-org28baa83" class="outline-4">
+<h4 id="org28baa83">使用LSTM</h4>
+<div class="outline-text-4" id="text-org28baa83">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -54,11 +54,11 @@ tags: [Research]
 </tr>
 
 <tr>
-<td class="org-right">&#xa0;</td>
-<td class="org-right">&#xa0;</td>
-<td class="org-right">&#xa0;</td>
-<td class="org-right">&#xa0;</td>
-<td class="org-right">&#xa0;</td>
+<td class="org-right">10</td>
+<td class="org-right">200</td>
+<td class="org-right">0.001</td>
+<td class="org-right">91.88%</td>
+<td class="org-right">91.25%</td>
 </tr>
 </tbody>
 </table>
@@ -70,9 +70,9 @@ tags: [Research]
 <h3 id="org463247a">cmu</h3>
 <div class="outline-text-3" id="text-org463247a">
 </div>
-<div id="outline-container-orgfd6bf44" class="outline-4">
-<h4 id="orgfd6bf44">使用LSTM</h4>
-<div class="outline-text-4" id="text-orgfd6bf44">
+<div id="outline-container-org0173572" class="outline-4">
+<h4 id="org0173572">使用LSTM</h4>
+<div class="outline-text-4" id="text-org0173572">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -106,6 +106,22 @@ tags: [Research]
 </tr>
 
 <tr>
+<td class="org-right">8</td>
+<td class="org-right">200</td>
+<td class="org-right">0.001</td>
+<td class="org-right">71.25%</td>
+<td class="org-right">55.00%</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
 <td class="org-right">&#xa0;</td>
 <td class="org-right">&#xa0;</td>
 <td class="org-right">&#xa0;</td>
@@ -117,4 +133,162 @@ tags: [Research]
 </div>
 </div>
 </div>
+<div id="outline-container-org3b87b1e" class="outline-3">
+<h3 id="org3b87b1e">h36m+cmu</h3>
+<div class="outline-text-3" id="text-org3b87b1e">
+</div>
+<div id="outline-container-org44d1641" class="outline-4">
+<h4 id="org44d1641">使用lstm</h4>
+<div class="outline-text-4" id="text-org44d1641">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">BATCH\<sub>SIZE</sub></th>
+<th scope="col" class="org-right">EPOCH</th>
+<th scope="col" class="org-right">LEARNING\<sub>RATE</sub></th>
+<th scope="col" class="org-right">TRAIN\<sub>ACC</sub></th>
+<th scope="col" class="org-right">TEST\<sub>ACC</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">300</td>
+<td class="org-right">0.0002</td>
+<td class="org-right">79.22%</td>
+<td class="org-right">77.08%</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">300</td>
+<td class="org-right">0.00025</td>
+<td class="org-right">77.97%</td>
+<td class="org-right">87.50%</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">300</td>
+<td class="org-right">0.0005</td>
+<td class="org-right">78.75%</td>
+<td class="org-right">85.42%</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">300</td>
+<td class="org-right">0.00075</td>
+<td class="org-right">75.31%</td>
+<td class="org-right">78.12%</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">300</td>
+<td class="org-right">0.001</td>
+<td class="org-right">64.22%</td>
+<td class="org-right">68.75%</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">300</td>
+<td class="org-right">0.000225</td>
+<td class="org-right">78.91%</td>
+<td class="org-right">79.17%</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">1000</td>
+<td class="org-right">0.0005</td>
+<td class="org-right">81.61%</td>
+<td class="org-right">82.95%</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">2000</td>
+<td class="org-right">0.00021</td>
+<td class="org-right">87.33%</td>
+<td class="org-right">84.56%</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org4b64572" class="outline-3">
+<h3 id="org4b64572">最后一层使用encode-decoder</h3>
+<div class="outline-text-3" id="text-org4b64572">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">BATCH\<sub>SIZE</sub></th>
+<th scope="col" class="org-right">EPOCH</th>
+<th scope="col" class="org-right">LEARNING\<sub>RATE</sub></th>
+<th scope="col" class="org-right">TRAIN\<sub>ACC</sub></th>
+<th scope="col" class="org-right">TEST\<sub>ACC</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">500</td>
+<td class="org-right">0.0001</td>
+<td class="org-right">73.67%</td>
+<td class="org-right">74.26%</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org16c0e2e" class="outline-2">
+<h2 id="org16c0e2e">自己设计Loss Func</h2>
 </div>

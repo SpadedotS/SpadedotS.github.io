@@ -18,9 +18,9 @@ tags: [Research]
 <h3 id="org86481ff">h36m</h3>
 <div class="outline-text-3" id="text-org86481ff">
 </div>
-<div id="outline-container-org834dc4e" class="outline-4">
-<h4 id="org834dc4e">使用LSTM</h4>
-<div class="outline-text-4" id="text-org834dc4e">
+<div id="outline-container-orgb50cdda" class="outline-4">
+<h4 id="orgb50cdda">使用LSTM</h4>
+<div class="outline-text-4" id="text-orgb50cdda">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -37,11 +37,11 @@ tags: [Research]
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">BATCH _ SIZE</th>
+<th scope="col" class="org-right">BATCH\underSIZE</th>
 <th scope="col" class="org-right">EPOCH</th>
-<th scope="col" class="org-right">LEARNING\<sub>RATE</sub></th>
-<th scope="col" class="org-right">TRAIN\<sub>ACC</sub></th>
-<th scope="col" class="org-right">TEST\<sub>ACC</sub></th>
+<th scope="col" class="org-right">LEARNING\underRATE</th>
+<th scope="col" class="org-right">TRAIN\underACC</th>
+<th scope="col" class="org-right">TEST\underACC</th>
 </tr>
 </thead>
 <tbody>
@@ -54,11 +54,11 @@ tags: [Research]
 </tr>
 
 <tr>
-<td class="org-right">&#xa0;</td>
-<td class="org-right">&#xa0;</td>
-<td class="org-right">&#xa0;</td>
-<td class="org-right">&#xa0;</td>
-<td class="org-right">&#xa0;</td>
+<td class="org-right">10</td>
+<td class="org-right">200</td>
+<td class="org-right">0.001</td>
+<td class="org-right">91.88%</td>
+<td class="org-right">91.25%</td>
 </tr>
 </tbody>
 </table>
@@ -70,9 +70,9 @@ tags: [Research]
 <h3 id="org463247a">cmu</h3>
 <div class="outline-text-3" id="text-org463247a">
 </div>
-<div id="outline-container-org8ff8e81" class="outline-4">
-<h4 id="org8ff8e81">使用LSTM</h4>
-<div class="outline-text-4" id="text-org8ff8e81">
+<div id="outline-container-org28baa83" class="outline-4">
+<h4 id="org28baa83">使用LSTM</h4>
+<div class="outline-text-4" id="text-org28baa83">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -103,6 +103,73 @@ tags: [Research]
 <td class="org-right">0.1</td>
 <td class="org-right">45.75%</td>
 <td class="org-right">50.00%</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">200</td>
+<td class="org-right">0.001</td>
+<td class="org-right">71.25%</td>
+<td class="org-right">55.00%</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org3b87b1e" class="outline-3">
+<h3 id="org3b87b1e">h36m+cmu</h3>
+<div class="outline-text-3" id="text-org3b87b1e">
+</div>
+<div id="outline-container-org44d1641" class="outline-4">
+<h4 id="org44d1641">使用lstm</h4>
+<div class="outline-text-4" id="text-org44d1641">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">BATCH\<sub>SIZE</sub></th>
+<th scope="col" class="org-right">EPOCH</th>
+<th scope="col" class="org-right">LEARNING\<sub>RATE</sub></th>
+<th scope="col" class="org-right">TRAIN\<sub>ACC</sub></th>
+<th scope="col" class="org-right">TEST\<sub>ACC</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">300</td>
+<td class="org-right">0.0002</td>
+<td class="org-right">79.22%</td>
+<td class="org-right">77.08%</td>
 </tr>
 
 <tr>
