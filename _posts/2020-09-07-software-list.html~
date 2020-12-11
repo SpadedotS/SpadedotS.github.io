@@ -16,6 +16,7 @@ tags: [Software]
 <ul class="org-ul">
 <li>VScode Windows环境下第一好的代码编辑器</li>
 <li>Emacs 通用的好编辑器</li>
+<li>Vim 同上</li>
 <li>Python3.x 产出 <del>学术垃圾</del> 必需的语言</li>
 <li>clangd 用作lsp后端</li>
 <li>gcc 编译器</li>
@@ -48,9 +49,21 @@ tags: [Software]
 <div class="outline-text-2" id="text-orgc9ba5d2">
 <ul class="org-ul">
 <li>Chrome <del>被谷歌生态绑架了</del></li>
+<li>Edge Dev</li>
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org9dbbc18" class="outline-2">
+<h2 id="org9dbbc18">远程工具</h2>
+<div class="outline-text-2" id="text-org9dbbc18">
+<ul class="org-ul">
+<li>Terminus Windows下最美观的命令行整合工具，不仅支持ssh，也支持本地的shell</li>
+<li>WinSCP 远程传输服务器到文件</li>
+</ul>
+</div>
+</div>
+
 <div id="outline-container-orge8028bf" class="outline-2">
 <h2 id="orge8028bf">文本阅读/编辑器</h2>
 <div class="outline-text-2" id="text-orge8028bf">
@@ -72,5 +85,15 @@ tags: [Software]
 <li>TeXLive <del>生产学术垃圾</del></li>
 </ul>
 </div>
+</div>
+</div>
+
+<div id="outline-container-orgeb3fb93" class="outline-2">
+<h2 id="orgeb3fb93">字体</h2>
+<div class="outline-text-2" id="text-orgeb3fb93">
+<ul class="org-ul">
+<li>Noto Sans 思源体</li>
+<li>Sarasa Mono 更纱黑体，在emacs中直接支持等宽等高</li>
+</ul>
 </div>
 </div>
