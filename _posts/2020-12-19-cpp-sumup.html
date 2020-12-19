@@ -46,7 +46,105 @@ const * 与 * const区别
 int b = 6;
 const int * p1 = &amp;a;
 p1 = &amp;b; //可行，可以这样赋值
+a = 55; //错误，p2指向的地址内的内容不可改变
 </pre>
 </div>
+
+<div class="org-src-container">
+<pre class="src src-C++:">int c = 7;
+int d = 8;
+int * const p2 = &amp;c;
+p2 = &amp;d; //错误，p2指向地址不可以改变
+c = 77; //可以
+</pre>
 </div>
+
+<p>
+总结：const在*前面，指针指向内容不可改变。（可以理解为int const (*p1)，const的是*p1这个数值）。
+const在*后面，指针指向地址不可改变。（可以理解为int * const(p1)，const的是p1这个地址）。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orged26ba3" class="outline-2">
+<h2 id="orged26ba3">c++中数据在内存中的存储</h2>
+<div class="outline-text-2" id="text-orged26ba3">
+</div>
+<div id="outline-container-org3c05d3d" class="outline-3">
+<h3 id="org3c05d3d">堆（动态内存分配）</h3>
+<div class="outline-text-3" id="text-org3c05d3d">
+<p>
+程序编写时手动分配，需要手动释放
+向高地址扩展
+</p>
+<ul class="org-ul">
+<li>new创建的对象，这种对象释放需要delete</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5c820d9" class="outline-3">
+<h3 id="org5c820d9">栈</h3>
+<div class="outline-text-3" id="text-org5c820d9">
+<p>
+编译器自动分配，自动释放
+向低地址扩展
+</p>
+<ul class="org-ul">
+<li>函数参数</li>
+<li>局部变量</li>
+<li>返回地址</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4a68a25" class="outline-3">
+<h3 id="org4a68a25">自由存储区</h3>
+<div class="outline-text-3" id="text-org4a68a25">
+<p>
+由malloc分配，free释放。
+类似于堆
+</p>
+</div>
+</div>
+<div id="outline-container-orgf35cade" class="outline-3">
+<h3 id="orgf35cade">全局区/静态区/static</h3>
+<div class="outline-text-3" id="text-orgf35cade">
+<ul class="org-ul">
+<li>static变量</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5a9a111" class="outline-3">
+<h3 id="org5a9a111">文字常量区</h3>
+<div class="outline-text-3" id="text-org5a9a111">
+<ul class="org-ul">
+<li>存放常量字符串</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org347e2e6" class="outline-3">
+<h3 id="org347e2e6">代码区</h3>
+<div class="outline-text-3" id="text-org347e2e6">
+<ul class="org-ul">
+<li>存放程序代码段的区域</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org68c9df4" class="outline-2">
+<h2 id="org68c9df4">函数指针</h2>
+</div>
+
+<div id="outline-container-org8af3837" class="outline-2">
+<h2 id="org8af3837">运算符重载</h2>
+</div>
+
+<div id="outline-container-org6f33241" class="outline-2">
+<h2 id="org6f33241">友元，继承等与类有关的知识</h2>
+</div>
+<div id="outline-container-org07795c2" class="outline-2">
+<h2 id="org07795c2">左值右值</h2>
+</div>
+<div id="outline-container-org44b4bcb" class="outline-2">
+<h2 id="org44b4bcb">浅拷贝 深拷贝</h2>
 </div>
