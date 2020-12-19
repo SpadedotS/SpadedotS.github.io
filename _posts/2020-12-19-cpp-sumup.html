@@ -1,0 +1,52 @@
+---
+layout: post
+title: C++各种重要的知识点
+tagline:
+categories: C++
+tags: [C++,ProgrammingLang]
+---
+
+<p>
+其实就是一个备份，作者很懒，太爱忘记东西了
+</p>
+
+<div id="outline-container-org62fe3bc" class="outline-2">
+<h2 id="org62fe3bc">指针</h2>
+<div class="outline-text-2" id="text-org62fe3bc">
+<div class="org-src-container">
+<pre class="src src-C++:">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+  int a = 123;
+  int *b = &amp;a;
+  int **c = &amp;b;
+  cout&lt;&lt;a&lt;&lt;endl; //123
+  cout&lt;&lt;b&lt;&lt;endl; //address of a
+  cout&lt;&lt;c&lt;&lt;endl; //address of b
+  cout&lt;&lt;*b&lt;&lt;endl; // 123
+  cout&lt;&lt;*c&lt;&lt;endl; //address of b
+  cout&lt;&lt;**c&lt;&lt;endl; // 123
+  return 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeeb4c93" class="outline-2">
+<h2 id="orgeeb4c93">const 指针</h2>
+<div class="outline-text-2" id="text-orgeeb4c93">
+<p>
+const * 与 * const区别
+</p>
+<div class="org-src-container">
+<pre class="src src-C++:">int a = 5;
+int b = 6;
+const int * p1 = &amp;a;
+p1 = &amp;b; //可行，可以这样赋值
+</pre>
+</div>
+</div>
+</div>
