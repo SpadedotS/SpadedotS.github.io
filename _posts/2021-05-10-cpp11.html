@@ -1,0 +1,43 @@
+---
+layout: post
+title: C++11新特性
+tagline:
+categories: C++
+tags: [C++,编程语言]
+---
+
+
+<div id="outline-container-org3661236" class="outline-2">
+<h2 id="org3661236">auto</h2>
+<div class="outline-text-2" id="text-org3661236">
+<p>
+自动推断变量类型
+必须立刻赋值
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgea1cf3c" class="outline-2">
+<h2 id="orgea1cf3c">range-based for</h2>
+<div class="outline-text-2" id="text-orgea1cf3c">
+<div class="org-src-container">
+<pre class="src src-C++">for(decl: coll) {
+  //statement
+}
+</pre>
+</div>
+<p>
+传值和传引用
+</p>
+<div class="org-src-container">
+<pre class="src src-C++">for(auto elem: vec)  //传值，vec元素直接copy到elem里
+  cout&lt;&lt;elem&lt;&lt;" ";
+for(auto&amp; elem: vec)  //传引用，直接使用vec的元素
+  elem*=3;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcc4b42f" class="outline-2">
+<h2 id="orgcc4b42f">智能指针</h2>
+</div>
