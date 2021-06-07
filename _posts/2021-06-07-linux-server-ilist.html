@@ -1,0 +1,114 @@
+---
+layout: post
+title: 网络编程中要掌握的socket函数
+tagline:
+categories: Linux,Web Programming
+tags: [Linux, Web Programming]
+---
+
+<p>
+记录一下linux系统中常用的socket API
+</p>
+
+<div id="outline-container-org0605f42" class="outline-2">
+<h2 id="org0605f42">常用API列表</h2>
+<div class="outline-text-2" id="text-org0605f42">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">函数名</th>
+<th scope="col" class="org-left">函数功能描述</th>
+<th scope="col" class="org-left">其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">socket</td>
+<td class="org-left">创建一个套接字</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">bind</td>
+<td class="org-left">将一个套接字绑定到&lt;ip, port&gt;的二元组</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">listen</td>
+<td class="org-left">将一个socket变为侦听状态</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">connect</td>
+<td class="org-left">建立tcp连接</td>
+<td class="org-left">通常在客户端</td>
+</tr>
+
+<tr>
+<td class="org-left">accept</td>
+<td class="org-left">接收一个连接</td>
+<td class="org-left">通常在服务端</td>
+</tr>
+
+<tr>
+<td class="org-left">send</td>
+<td class="org-left">通过一个socket发送数据</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">recv</td>
+<td class="org-left">通过一个socket接收数据</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">select</td>
+<td class="org-left">判断 <b>一组</b> socket上的读写和异常事件</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">gethostbyname</td>
+<td class="org-left">通过域名获取机器地址</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">close</td>
+<td class="org-left">关闭一个套接字，并且回收其对应的资源</td>
+<td class="org-left">Windows下是closesocket</td>
+</tr>
+
+<tr>
+<td class="org-left">shutdown</td>
+<td class="org-left">关闭一个socket或收发通道</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">setsockopt</td>
+<td class="org-left">设置一个套接字选项</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">getsockopt</td>
+<td class="org-left">获取一个套接字选项</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
