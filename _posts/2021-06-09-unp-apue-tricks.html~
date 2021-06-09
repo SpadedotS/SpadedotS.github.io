@@ -19,7 +19,7 @@ UNP一书中的代码样例将一部分Linux中常用的接口进行了封装，
 在本书中只要你遇到一个首字母大写的函数名，它就是我们定义的某个包裹函数。它调用的实际函数的名字与包裹函数名相同，不过以对应的小写字母开头。
 </pre>
 <p>
-在头文件中简单粗暴地使用了一句=#include "unp.h"=，会容易让人摸不到头脑，本文主要介绍笔者是如何搜索找到代码定义的。
+在头文件中简单粗暴地使用了一句 <code>#include "unp.h"</code> ，会容易让人摸不到头脑，本文主要介绍笔者是如何搜索找到代码定义的。
 </p>
 </div>
 </div>
@@ -28,9 +28,9 @@ UNP一书中的代码样例将一部分Linux中常用的接口进行了封装，
 <h2 id="org041b257">善用查找</h2>
 <div class="outline-text-2" id="text-org041b257">
 <p>
-使用=grep=类工具可以在文件夹下查找到目标文本在哪些文件里出现过，针对特定函数名，在已知其参数类型的情况下，可以对整个文件夹进行搜索，查找其可能出现的定义形式。
-举例，现在想要查找=Close()=函数。在文件=tcpserv01.c=中出现的形式为=Close(connfd)=，由此推测是类似Linux系统中的I/O函数=close()=。
-在UNP样例代码的文件夹下搜索=Close(=函数，可以看到如下结果
+使用 <code>grep</code> 类工具可以在文件夹下查找到目标文本在哪些文件里出现过，针对特定函数名，在已知其参数类型的情况下，可以对整个文件夹进行搜索，查找其可能出现的定义形式。
+举例，现在想要查找 <code>Close()</code> 函数。在文件 <code>tcpserv01.c</code> 中出现的形式为 <code>Close(connfd)</code> ，由此推测是类似Linux系统中的I/O函数 <code>close()</code> 。
+在UNP样例代码的文件夹下搜索 <code>Close(</code> 函数，可以看到如下结果
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">$ rg "Close\(int"
@@ -55,7 +55,7 @@ sctp/unp.h
 </div>
 
 <p>
-可以看到=unp.h=中定义了=Close()=函数名，而其定义在=lib/unp.h=下。
+可以看到 <code>unp.h</code> 中定义了 <code>Close()</code> 函数名，而其定义在 <code>lib/unp.h</code> 下。
 </p>
 </div>
 </div>
@@ -63,7 +63,7 @@ sctp/unp.h
 <h2 id="org429533e">UNP是怎么封装Linux中原有函数的？</h2>
 <div class="outline-text-2" id="text-org429533e">
 <p>
-继续上一部分，以=Close()=为例，其源码如下
+继续上一部分，以 <code>Close()</code> 为例，其源码如下
 </p>
 <div class="org-src-container">
 <pre class="src src-C++">void
