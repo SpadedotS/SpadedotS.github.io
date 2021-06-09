@@ -1,0 +1,91 @@
+---
+layout: post
+title: 学习UNP和APUE的一些解惑Tip
+tagline:
+categories: Linux Server
+tags: [Linux Server]
+---
+
+<p>
+学习UNP时候遇到一些关于头文件和其中自我封装的函数的疑惑，在本文中记录下查找方案。
+</p>
+<div id="outline-container-org912d823" class="outline-2">
+<h2 id="org912d823">起因</h2>
+<div class="outline-text-2" id="text-org912d823">
+<p>
+UNP一书中的代码样例将一部分Linux中常用的接口进行了封装，原书中的1.4节介绍说是做了错误处理的包裹函数
+</p>
+<pre class="example">
+在本书中只要你遇到一个首字母大写的函数名，它就是我们定义的某个包裹函数。它调用的实际函数的名字与包裹函数名相同，不过以对应的小写字母开头。
+</pre>
+<p>
+在头文件中简单粗暴地使用了一句=#include "unp.h"=，会容易让人摸不到头脑，本文主要介绍笔者是如何搜索找到代码定义的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org041b257" class="outline-2">
+<h2 id="org041b257">善用查找</h2>
+<div class="outline-text-2" id="text-org041b257">
+<p>
+使用=grep=类工具可以在文件夹下查找到目标文本在哪些文件里出现过，针对特定函数名，在已知其参数类型的情况下，可以对整个文件夹进行搜索，查找其可能出现的定义形式。
+举例，现在想要查找=Close()=函数。在文件=tcpserv01.c=中出现的形式为=Close(connfd)=，由此推测是类似Linux系统中的I/O函数=close()=。
+在UNP样例代码的文件夹下搜索=Close(=函数，可以看到如下结果
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ rg "Close\(int"
+key/unp.h
+399:void         Close(int);
+
+lib/unp.h
+437:void         Close(int);
+
+lib/#unp.h#
+438:void         Close(int);
+
+lib/unp.lh
+368:void    Close(int);##291 ##src/lib/unp.h##
+
+lib/wrapunix.c
+32:Close(int fd)
+
+sctp/unp.h
+403:void         Close(int);
+</pre>
+</div>
+
+<p>
+可以看到=unp.h=中定义了=Close()=函数名，而其定义在=lib/unp.h=下。
+</p>
+</div>
+</div>
+<div id="outline-container-org429533e" class="outline-2">
+<h2 id="org429533e">UNP是怎么封装Linux中原有函数的？</h2>
+<div class="outline-text-2" id="text-org429533e">
+<p>
+继续上一部分，以=Close()=为例，其源码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-C++">void
+Close(int fd)
+ {
+	 if (close(fd) == -1)
+		 err_sys("close error");
+}
+</pre>
+</div>
+
+<p>
+可以看到包裹函数比起原函数，增加了错误处理的功能，这也符合原书中的说明。
+</p>
+</div>
+</div>
+<div id="outline-container-org2069ba9" class="outline-2">
+<h2 id="org2069ba9">UNP源代码组织探幽</h2>
+<div class="outline-text-2" id="text-org2069ba9">
+<p>
+基于以上的发现，我对UNP源代码的结构有了进一步的兴趣，于是开始根据文件名和文件内容总结。
+<b>待续</b>
+</p>
+</div>
+</div>
