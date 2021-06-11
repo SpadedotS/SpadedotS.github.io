@@ -1,0 +1,137 @@
+---
+layout: post
+title: Linux下文件I/0常用函数汇总
+tagline:
+categories: Linux OS 
+tags: [Linux]
+---
+
+<p>
+这篇文章记录Linux系统下常用的文件IO函数
+</p>
+
+<div id="outline-container-org47700f2" class="outline-2">
+<h2 id="org47700f2">最常用的</h2>
+<div class="outline-text-2" id="text-org47700f2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">函数名</th>
+<th scope="col" class="org-left">函数作用描述</th>
+<th scope="col" class="org-left">返回值</th>
+<th scope="col" class="org-left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">open</td>
+<td class="org-left">打开或创建一个文件。</td>
+<td class="org-left">成功：返回文件描述符；错误：返回-1。</td>
+<td class="org-left">另有openat用于在相对路径打开。</td>
+</tr>
+
+<tr>
+<td class="org-left">read</td>
+<td class="org-left">从打开文件中读数据。</td>
+<td class="org-left">成功：返回读取到的字节数，若到文件尾，返回0；出错：返回-1。</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">creat</td>
+<td class="org-left">创建一个新文件。</td>
+<td class="org-left">成功：返回为只写打开的文件描述符；错误：返回-1。</td>
+<td class="org-left">类似open。</td>
+</tr>
+
+<tr>
+<td class="org-left">write</td>
+<td class="org-left">向打开的文件中写入数据。</td>
+<td class="org-left">成功：返回已写入的字节数；错误：返回-1。</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">lseek</td>
+<td class="org-left">为一个打开文件设置偏移量。</td>
+<td class="org-left">成功：返回新的文件偏移量；错误：返回-1。</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">close</td>
+<td class="org-left">关闭一个打开文件。</td>
+<td class="org-left">成功：返回0；错误：返回-1。</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org3b31c65" class="outline-2">
+<h2 id="org3b31c65">其他常用的</h2>
+<div class="outline-text-2" id="text-org3b31c65">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">函数名</th>
+<th scope="col" class="org-left">函数作用描述</th>
+<th scope="col" class="org-left">返回值</th>
+<th scope="col" class="org-left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">dup</td>
+<td class="org-left">复制一个现有的文件描述符。</td>
+<td class="org-left">成功：返回新的文件描述符；错误：返回-1。</td>
+<td class="org-left">也可用dup2，直接将一个fd复制到另一个fd。</td>
+</tr>
+
+<tr>
+<td class="org-left">sync</td>
+<td class="org-left">将缓冲区内容写入。</td>
+<td class="org-left">成功：返回0；出错：返回-1。</td>
+<td class="org-left">另有fsync、fdatasync，功能类似。</td>
+</tr>
+
+<tr>
+<td class="org-left">fcntl</td>
+<td class="org-left">改变已打开文件的属性。</td>
+<td class="org-left">成功：视CMD参数而定；错误：返回-1。</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">ioctl</td>
+<td class="org-left">与各种设备的IO。</td>
+<td class="org-left">成功：视cmd参数而定；错误：返回-1。</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
