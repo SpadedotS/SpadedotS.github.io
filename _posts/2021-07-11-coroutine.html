@@ -1,0 +1,250 @@
+---
+layout: post
+title: 协程学习记录
+tagline:
+categories: Linux
+tags: [高并发,Linux,Coroutine]
+---
+
+<p>
+记录一下学习协程相关的内容。
+</p>
+
+<div id="outline-container-org95ebca6" class="outline-2">
+<h2 id="org95ebca6">有哪些优秀的公开库？</h2>
+<div class="outline-text-2" id="text-org95ebca6">
+<ul class="org-ul">
+<li>libco 腾讯的协程库，据说是微信后台服务器广泛在使用的代码</li>
+<li>libgo Golang风格的协程库</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org30b211b" class="outline-2">
+<h2 id="org30b211b">为什么有协程？</h2>
+<div class="outline-text-2" id="text-org30b211b">
+<p>
+首先对比一下同步和异步的区别。
+</p>
+<ul class="org-ul">
+<li>同步：代码逻辑好，但是性能较低</li>
+<li>异步：性能高，但是代码逻辑难于理解</li>
+</ul>
+<p>
+协程出现的一大目的就是期望用同步的编程方式实现异步的代码工作方式。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org06eb58f" class="outline-2">
+<h2 id="org06eb58f">实现协程的方式？</h2>
+<div class="outline-text-2" id="text-org06eb58f">
+<p>
+两个关键原语， <code>yield</code> 和 <code>resume</code>
+</p>
+<ul class="org-ul">
+<li>yield：让出工作 <code>switch(a, b)</code></li>
+<li>resume：返回工作 <code>switch(b, a)</code></li>
+</ul>
+</div>
+<div id="outline-container-org57e4a25" class="outline-3">
+<h3 id="org57e4a25">使用longjmp和setjmp</h3>
+<div class="outline-text-3" id="text-org57e4a25">
+<p>
+C语言中提供的接口，同样被用于实现try/catch（C语言中没有这两个关键词）
+</p>
+</div>
+</div>
+<div id="outline-container-org76aa375" class="outline-3">
+<h3 id="org76aa375">使用ucontext</h3>
+<div class="outline-text-3" id="text-org76aa375">
+<p>
+Linux系统的接口，主要靠四个函数
+</p>
+<ul class="org-ul">
+<li><code>getcontext(ucontext* ucp)</code> 初始化ucp结构体，将当前上下文保存到ucp中</li>
+<li><code>setcontext(const ucontext* ucp)</code> 将当前上下文设置为ucp</li>
+<li><code>makecontext(ucontext* ucp, void(*func)(), int argc, ...)</code> 修改getcontext获取到的上下文，并且在之后执行func</li>
+<li><code>swapcontext(ucontext* oucp, ucontext* ucp)</code> 保存当前上下文到oucp中，然后激活ucp</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org60f5818" class="outline-3">
+<h3 id="org60f5818">汇编跳转</h3>
+<div class="outline-text-3" id="text-org60f5818">
+<p>
+自己参考实现的主要方式，保存寄存器中的内容，然后切换，和ucontext思想类似。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org05b3161" class="outline-2">
+<h2 id="org05b3161">什么是有栈协程，什么是无栈协程？</h2>
+<div class="outline-text-2" id="text-org05b3161">
+<p>
+<b>没有栈是不能做调用的</b> 
+</p>
+</div>
+<div id="outline-container-org32d0ca4" class="outline-3">
+<h3 id="org32d0ca4">有栈协程</h3>
+<div class="outline-text-3" id="text-org32d0ca4">
+<p>
+每个携程有自己的独立的栈，栈大小视实际应用情况而定。
+高可达数M，适用于图片视频存储、文件传输等。
+低可到数K，适用于连接等。
+</p>
+<ul class="org-ul">
+<li>优点：实现容易，性能更高</li>
+<li>缺点：对内存利用率低，容易产生小碎片</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbfed33a" class="outline-3">
+<h3 id="orgbfed33a">无栈协程</h3>
+<div class="outline-text-3" id="text-orgbfed33a">
+<p>
+每个携程共享线程的栈，需要手动给出计算栈在内存中开始结束位置的转换。
+</p>
+<ul class="org-ul">
+<li>优点：对内存利用率高，没有碎片</li>
+<li>缺点：性能相比起有栈的协程略低</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6fc6b85" class="outline-2">
+<h2 id="org6fc6b85">如何通过汇编切换实现?</h2>
+<div class="outline-text-2" id="text-org6fc6b85">
+<p>
+实现 <code>switch(a, b)</code> 时（从a协程切换到b）
+将a运行时寄存器中的内容存储起来，之后寄存器加载b的寄存器内容
+</p>
+</div>
+</div>
+
+<div id="outline-container-org93c2cd0" class="outline-2">
+<h2 id="org93c2cd0">协程启动步骤</h2>
+<div class="outline-text-2" id="text-org93c2cd0">
+<ol class="org-ol">
+<li>创建</li>
+<li>加入到就绪队列</li>
+<li>指定入口函数地址</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgcfb9d67" class="outline-2">
+<h2 id="orgcfb9d67">协程中应当包含哪些信息</h2>
+<div class="outline-text-2" id="text-orgcfb9d67">
+<ol class="org-ol">
+<li>上下文 context</li>
+<li>栈的位置 stack</li>
+<li>栈大小 stack size</li>
+<li>入口函数 func</li>
+<li>入口参数 args</li>
+<li>集合 包括如下
+<ul class="org-ul">
+<li>wait</li>
+<li>sleep</li>
+<li>ready</li>
+<li>close</li>
+</ul></li>
+<li>状态 status</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org7b023ae" class="outline-2">
+<h2 id="org7b023ae">调度器应当着重于哪些工作？</h2>
+</div>
+
+<div id="outline-container-orgbff5c77" class="outline-2">
+<h2 id="orgbff5c77">协程如何在多线程下工作</h2>
+<div class="outline-text-2" id="text-orgbff5c77">
+<p>
+对调度器加锁，在调度的操作上
+例如：TAILQ的地方加入自旋锁
+红黑树等待用互斥锁（mutex）
+不会出现死锁，因为所有线程的所有协程共用一个调度器
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9620661" class="outline-2">
+<h2 id="org9620661">coroutine应当提供哪些接口？</h2>
+<div class="outline-text-2" id="text-org9620661">
+<ol class="org-ol">
+<li>create 创建</li>
+<li>scheduler_loop 调度器</li>
+<li>sleep 睡眠</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org0330989" class="outline-2">
+<h2 id="org0330989">应当封装哪些Linux接口使其异步</h2>
+<div class="outline-text-2" id="text-org0330989">
+<ol class="org-ol">
+<li>accept</li>
+<li>connect</li>
+<li>send</li>
+<li>write</li>
+<li>recv</li>
+<li>read</li>
+<li>sendto（udp接口）</li>
+<li>recvfrom（udp接口）</li>
+</ol>
+<p>
+大致实现策略如下：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C++">fd -&gt; epoll();
+yield();
+API();
+</pre>
+</div>
+
+<p>
+三种实现方式
+</p>
+<ol class="org-ol">
+<li>另外起一个函数名</li>
+<li>做成和系统API同名的函数</li>
+<li>使用hook</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org25a0b3d" class="outline-2">
+<h2 id="org25a0b3d">hook如何实现？</h2>
+<div class="outline-text-2" id="text-org25a0b3d">
+<p>
+使用dlsym截获系统API，截获之后换为自己定义的接口。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7fc0682" class="outline-2">
+<h2 id="org7fc0682">与reactor相比，协程的不同</h2>
+<div class="outline-text-2" id="text-org7fc0682">
+<p>
+reactor是对epoll的再封装
+协程靠自己的库，利用了epoll的功能
+</p>
+</div>
+</div>
+
+<div id="outline-container-org633fd0d" class="outline-2">
+<h2 id="org633fd0d">协程性能上的优势？</h2>
+<div class="outline-text-2" id="text-org633fd0d">
+<ul class="org-ul">
+<li>更轻量</li>
+<li>比起线程来说，协程切换代价小，切换更快速</li>
+<li>比起reactor代码更易读（同步的代码逻辑）</li>
+<li>协程切换都在用户态之内，不影响进程调度</li>
+</ul>
+</div>
+</div>
